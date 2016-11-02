@@ -18,7 +18,7 @@ public class War {
         falicorniaArmy.addBattalion(new SlingGunBattalion(0));
 
         LengaburuArmyComposer lengaburuArmyComposer = new LengaburuArmyComposer();
-        Integer relativePower = 2;
+        Double relativePower = 2.0;
         Army proposedArmy = lengaburuArmyComposer.getAppropriateArmy(lengaburuArmy, falicorniaArmy, relativePower);
         List<Battalion> battalions = proposedArmy.getBattalions();
         for(Battalion battalion : battalions) {

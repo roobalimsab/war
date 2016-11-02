@@ -17,9 +17,9 @@ public abstract class BaseBattalion {
 
     public abstract Integer getRank();
 
-    public BattalionResponse getBattalionResponse(Integer opposingBattalionCount, Integer relativePower) {
+    public BattalionResponse getBattalionResponse(Integer opposingBattalionCount, Double relativePower) {
         int proposedCount = 0, unsatisfiedCount = 0;
-        int requiredCount = opposingBattalionCount / relativePower;
+        int requiredCount = (int) Math.ceil(opposingBattalionCount / relativePower);
         if(requiredCount < this.count) {
             proposedCount = requiredCount;
             this.setCount(this.count -= proposedCount);
